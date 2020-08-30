@@ -13,7 +13,7 @@ const routes: Routes = [
     path:'',component:HomeComponent
   },
   {
-    path:'product/id',component:ProductComponent
+    path:'product/:id',component:ProductComponent
   },
   {
     path:'cart',component:CartComponent
@@ -25,7 +25,7 @@ const routes: Routes = [
     path:'thankyou',component:ThankyouComponent
   },
   {
-    path:'customer',component:CustumerComponent
+    path:'customer/:id',component:CustumerComponent
   }
 ];
 

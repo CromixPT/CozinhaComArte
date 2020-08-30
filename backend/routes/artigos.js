@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
         on: 'A.TipoArtigo = TA.idTipo'
     }])
     .withFields([
-        'A.Nome', 'A.Descricao as DescPrato','A.Preco','A.Imagem','TA.Descricao'
+        'A.idArtigo','A.Nome', 'A.Descricao as DescPrato','A.Preco','A.Imagem','TA.Descricao'
     ]).slice(startValue,endValue).sort({idArtigo:.1})
     .getAll().then(ec =>{
       if(ec.length>0){
