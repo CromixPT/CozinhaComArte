@@ -29,6 +29,9 @@ router.get('/', function(req, res) {
       }).catch(err => console.log(err));
 });
 
+
+/*get user details*/
+
 router.get('/:user',(req,res)=>{
   let user = req.params.user;
   database.table('Clientes as C').filter({'email':user})
@@ -37,11 +40,10 @@ router.get('/:user',(req,res)=>{
   .catch(err => console.log(err));
 })
 
+
+/* Add a new user */
 router.post('/novo',(req,res)=>{
     let {nome,morada,email,password} = req.body;
-
-    console.log(nome);
-
     if(null != nome && null != email && null!= password){
         database.table('Clientes')
         .insert({
