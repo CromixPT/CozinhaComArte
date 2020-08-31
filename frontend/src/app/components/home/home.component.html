@@ -19,20 +19,21 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6" *ngFor="let p of produtos">
                         <div class="card my-2">
-                            <img [src]=p.Imagem alt="{{p.Nome}}" width="200px" height="200px" class="card-img-top" style="cursor: pointer;" (click)="selectProduct(p.idArtigo)">
+                            <img [src]=p.image alt="{{p.name}}" width="200px" height="200px" class="card-img-top" style="cursor: pointer;" (click)="selectProduct(p.idArtigo)">
                             <div class="card-header">
                                 <div class="card-title">
-                                    <p><a routerLink="/" (click)="selectProduct(p.idArtigo)">{{p.Nome | titlecase}}</a></p>
+                                    <p><a routerLink="/" (click)="selectProduct(p.id)">{{p.name | titlecase}}</a></p>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h6>{{p.DescPrato.substr(0,50)}} ...</h6>
-                                <p class="lead">{{p.Preco | currency:'EUR'}}</p>
+                                <h6>{{p.description.substr(0,50)}} ...</h6>
+                                <p class="lead">{{p.price | currency:'EUR'}}</p>
                             </div>
                             <div class="row d-flex justify-content-center border-primary my-3">
-                                <div class="col-md-6"
-                                    <button class="btn btn-outline-primary btn-sm btn-block"
-                                    (click)="AddToCart(p.idArtigo)">Encomendar</button>
+                                <div class="col-md-6">
+                                    <button class="btn btn-outline-primary btn-sm btn-block" (click)="AddToCart(p.id)">
+                                        Encomendar
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -65,12 +66,12 @@
                         <!-- product widget -->
                         <div class="product-widget" *ngFor="let p of produtos">
                             <div class="product-img">
-                                <img  [src]=p.Imagem alt="{{p.Nome}}">
+                                <img  [src]=p.image alt="{{p.name}}">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
                                 <h3 class="product-name"><a routerLink="/" (click)="selectProduct(p.idArtigo)">{{p.Nome}}</a></h3>
-                                <h4 class="product-price">€{{p.Preco}}</h4>
+                                <h4 class="product-price">€{{p.price}}</h4>
                             </div>
                         </div>
                         <!-- /product widget -->

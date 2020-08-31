@@ -4,11 +4,12 @@ export interface ProductModelServer {
   category: String;
   description: String;
   image: String;
-  preco: number;
+  price: number;
+  quantity:number;
+  
 }
 
-
 export interface serverResponse  {
-  count: number;
-  products: ProductModelServer[]
+  size: number;
+  artigos: ProductModelServer[]
 };

@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
         on: 'A.TipoArtigo = TA.idTipo'
     }])
     .withFields([
-        'A.idArtigo','A.Nome', 'A.Descricao as DescPrato','A.Preco','A.Imagem','TA.Descricao'
+        'A.idArtigo as id','A.Nome as name', 'A.Descricao as description','A.Preco as price','A.Imagem as image','TA.Descricao as category','10 as quantity'
     ]).slice(startValue,endValue).sort({idArtigo:.1})
     .getAll().then(ec =>{
       if(ec.length>0){
@@ -53,7 +53,7 @@ router.get('/:id',(req,res) =>{
         on: 'A.TipoArtigo = TA.idTipo'
     }])
     .withFields([
-        'A.Nome', 'A.Descricao as DescPrato','A.Preco','TA.Descricao'
+        'A.idArtigo as id','A.Nome as name', 'A.Descricao as description','A.Preco as price','TA.Descricao as category','A.imagem as image','10 as quantity'
     ])
     .filter({'A.idArtigo':idArtigo})
     .get().then(artigo =>{
