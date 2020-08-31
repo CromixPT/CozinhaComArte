@@ -1,13 +1,14 @@
-export interface ProductModelServer{
-    idArtigo: number;
-    nome:string;
-    descPrato: string;
-    preco: number;
-    imagem: string;
-    descricao: string;
+export interface ProductModelServer {
+  id: number;
+  name: String;
+  category: String;
+  description: String;
+  image: String;
+  preco: number;
 }
 
-export interface ServerResponse{
-    size:number;
-    artigos:ProductModelServer[];
-}
+
+export interface serverResponse  {
+  count: number;
+  products: ProductModelServer[]
+};
