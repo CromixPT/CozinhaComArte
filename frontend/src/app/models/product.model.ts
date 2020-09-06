@@ -1,15 +1,18 @@
+export interface Category {
+  id:number;
+  description:String;
+}
 export interface ProductModelServer {
   id: number;
   name: String;
-  category: String;
   description: String;
-  image: String;
+  mainImage: String;
   price: number;
   quantity:number;
-  
+  category:Category;
 }
 
-export interface serverResponse  {
-  size: number;
-  artigos: ProductModelServer[]
-};
+
+export interface ServerResponse{
+  Products : ProductModelServer[];
+}
