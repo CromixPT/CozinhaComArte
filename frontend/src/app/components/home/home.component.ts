@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.ProductService.getAllProducts().subscribe((prods:ServerResponse)=>{
+      console.log("PLIM")
       console.log(prods.Products)
       this.produtos = prods.Products;
     });
