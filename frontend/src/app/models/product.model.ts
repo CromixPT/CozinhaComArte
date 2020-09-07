@@ -14,5 +14,6 @@ export interface ProductModelServer {
 
 
 export interface ServerResponse{
-  Products : ProductModelServer[];
+  size:number;
+  products:ProductModelServer[];
 }

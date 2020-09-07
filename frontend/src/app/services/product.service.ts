@@ -19,7 +19,6 @@ export class ProductService {
         limit: limitOfResults.toString()
       }
     });
-    console.log(teste);
     return teste
   }
 

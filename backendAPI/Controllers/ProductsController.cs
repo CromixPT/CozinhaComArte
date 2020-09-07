@@ -20,11 +20,25 @@ namespace backendAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> GetProdutcs()
+        public ActionResult<IEnumerable<ProductsReponse>> GetProdutcs()
         {
-            var customers = _repository.GetProducts();
+            var productsResponse = new ProductsReponse(_repository.GetProducts());
 
-            return Ok(customers);
+            return Ok(productsResponse);
+        }
+
+        //GET api/commands/id
+        [HttpGet("{id}", Name = "GetCommandById")]
+        public ActionResult<Product> GetCommandById(int id)
+        {
+            var product = _repository.GetProduct(id);
+
+            if (product != null)
+            {
+                return Ok(product); ;
+            }
+            return NotFound();
+
         }
     }
 }

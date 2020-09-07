@@ -19,10 +19,11 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6" *ngFor="let p of produtos">
                         <div class="card my-2">
-                            <img [src]=p.mainImage alt="{{p.name}}" width="200px" height="200px" class="card-img-top" style="cursor: pointer;" (click)="selectProduct(p.idArtigo)">
+                            <img [src]=p.mainImage alt="{{p.name}}" width="200px" height="200px" class="card-img-top" style="cursor: pointer;" (click)="selectProduct(p.id)">
                             <div class="card-header">
                                 <div class="card-title">
                                     <p><a routerLink="/" (click)="selectProduct(p.id)">{{p.name | titlecase}}</a></p>
+                                    <p>{{p.category.name | titlecase}}</p>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -66,11 +67,11 @@
                         <!-- product widget -->
                         <div class="product-widget" *ngFor="let p of produtos">
                             <div class="product-img">
-                                <img  [src]=p.image alt="{{p.name}}">
+                                <img  [src]=p.mainImage alt="{{p.name}}">
                             </div>
                             <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a routerLink="/" (click)="selectProduct(p.idArtigo)">{{p.Nome}}</a></h3>
+                                <p class="product-category">{{p.category.name}}</p>
+                                <h3 class="product-name"><a routerLink="/" (click)="selectProduct(p.id)">{{p.name}}</a></h3>
                                 <h4 class="product-price">€{{p.price}}</h4>
                             </div>
                         </div>

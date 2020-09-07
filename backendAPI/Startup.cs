@@ -71,6 +71,8 @@ namespace backendAPI
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthorization();
 
+            app.UsePathBase("/api");
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", context => {

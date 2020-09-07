@@ -15,14 +15,14 @@ namespace backendAPI.Data
         {
             _context = context;
         }
-        public void DeleteProduct(Product order)
+        public void DeleteProduct(Product product)
         {
             throw new NotImplementedException();
         }
 
-        public Product GetProduct(int orderId)
+        public Product GetProduct(int productId)
         {
-            throw new NotImplementedException();
+            return _context.Products.FirstOrDefault(p => p.Id == productId);
         }
 
         public IEnumerable<Product> GetProducts()
