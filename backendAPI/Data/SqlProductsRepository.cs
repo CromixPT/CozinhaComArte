@@ -22,7 +22,7 @@ namespace backendAPI.Data
 
         public Product GetProduct(int productId)
         {
-            return _context.Products.FirstOrDefault(p => p.Id == productId);
+            return _context.Products.Include(p=> p.Category).FirstOrDefault(p => p.Id == productId);
         }
 
         public IEnumerable<Product> GetProducts()

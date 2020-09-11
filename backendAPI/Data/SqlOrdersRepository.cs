@@ -1,5 +1,6 @@
 ﻿
 using backendAPI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,6 @@ namespace backendAPI.Data
         {
             return _context.Orders.ToList();
         }
-
         public void NewOrder(Order newOrder)
         {
             throw new NotImplementedException();
